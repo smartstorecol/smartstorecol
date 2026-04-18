@@ -858,6 +858,29 @@ function renderServiceCard(producto) {
 }
 
 // ── MOUNT ALL SECTIONS ─────────────────────────────────────────────
+const modal = document.getElementById("modalProducto");
+const modalImg = document.getElementById("modalImagen");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalDescripcion = document.getElementById("modalDescripcion");
+
+function abrirProducto(producto){
+modal.style.display = "flex";
+modalImg.src = producto.imagen;
+modalTitulo.textContent = producto.nombre;
+modalDescripcion.textContent = producto.tipo;
+}
+
+document.addEventListener("click", function(e){
+if(e.target.classList.contains("cerrarModal")){
+modal.style.display = "none";
+}
+});
+
+window.onclick = function(e){
+if(e.target == modal){
+modal.style.display = "none";
+}
+}
 const streamingGrid = document.getElementById("streaming-grid");
 streaming.forEach(p => streamingGrid.appendChild(renderCard(p)));
 document.getElementById("streaming-count").textContent = streaming.length + " productos";
