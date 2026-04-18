@@ -769,6 +769,7 @@ const WA_SVG = `<svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" xml
 function renderCard(producto) {
   const card = document.createElement("div");
   card.className = "card";
+ card.onclick = () => abrirProducto(producto);
 
   // Image area
   const imgDiv = document.createElement("div");
