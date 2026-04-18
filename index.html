@@ -772,8 +772,9 @@ function renderCard(producto) {
  card.onclick = () => abrirProducto(producto);
 
   // Image area
-  const imgDiv = document.createElement("div");
-  imgDiv.className = "card-img";
+const imgDiv = document.createElement("div");
+imgDiv.className = "card-img";
+imgDiv.onclick = () => abrirProducto(producto);
 
   if (producto.imagen) {
     const img = document.createElement("img");
